@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Basic Knowledge of Singing - A bilingual educational website for learning singing, Bangla cultural songs, and music instruments. Written by Muhammad Mahin.">
+    <meta name="keywords" content="singing, music education, Bangla songs, cultural music, harmonium, tabla, guitar, flute, vocal training">
+    <meta name="author" content="Farhan Muh Tasim">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Basic Knowledge of Singing">
+    <meta property="og:description" content="Learn singing, Bangla cultural songs, and music instruments with Muhammad Mahin">
+    <meta property="og:image" content="./assets/hero-banner.jpg">
+    <meta property="og:type" content="website">
+    
+    <title>Basic Knowledge of Singing | Muhammad Mahin</title>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+Bengali:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="./style.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Poppins', 'Noto Sans Bengali', 'sans-serif'],
+                        bengali: ['Noto Sans Bengali', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            DEFAULT: '#2563eb',
+                            dark: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/80 dark:bg-gray-900/80 border-b border-gray-200/50 dark:border-gray-800/50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center space-x-3 group" data-testid="link-home">
+                    <img src="./assets/logo.png" alt="Logo" class="h-10 w-10 md:h-12 md:w-12 rounded-lg transition-transform group-hover:scale-105">
+                    <span class="font-bold text-lg md:text-xl text-primary hidden sm:inline-block" data-lang="en">Basic Knowledge of Singing</span>
+                    <span class="font-bold font-bengali text-lg md:text-xl text-primary hidden sm:inline-block" data-lang="bn" style="display:none;">গানের মৌলিক জ্ঞান</span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#home" class="nav-link hover-elevate" data-testid="link-nav-home">
+                        <span data-lang="en">Home</span>
+                        <span data-lang="bn" style="display:none;">হোম</span>
+                    </a>
+                    <a href="#about" class="nav-link hover-elevate" data-testid="link-nav-about">
+                        <span data-lang="en">About</span>
+                        <span data-lang="bn" style="display:none;">পরিচিতি</span>
+                    </a>
+                    <a href="#learn" class="nav-link hover-elevate" data-testid="link-nav-learn">
+                        <span data-lang="en">Learn</span>
+                        <span data-lang="bn" style="display:none;">শিখুন</span>
+                    </a>
+                    <a href="#cultural" class="nav-link hover-elevate" data-testid="link-nav-cultural">
+                        <span data-lang="en">Cultural Songs</span>
+                        <span data-lang="bn" style="display:none;">সাংস্কৃতিক গান</span>
+                    </a>
+                    <a href="#instruments" class="nav-link hover-elevate" data-testid="link-nav-instruments">
+                        <span data-lang="en">Instruments</span>
+                        <span data-lang="bn" style="display:none;">বাদ্যযন্ত্র</span>
+                    </a>
+                    <a href="#videos" class="nav-link hover-elevate" data-testid="link-nav-videos">
+                        <span data-lang="en">Videos</span>
+                        <span data-lang="bn" style="display:none;">ভিডিও</span>
+                    </a>
+                    <a href="#contact" class="nav-link hover-elevate" data-testid="link-nav-contact">
+                        <span data-lang="en">Contact</span>
+                        <span data-lang="bn" style="display:none;">যোগাযোগ</span>
+                    </a>
+                </div>
+                
+                <!-- Theme & Language Toggles -->
+                <div class="flex items-center space-x-3">
+                    <!-- Language Toggle -->
+                    <button id="langToggle" class="icon-btn" data-testid="button-language-toggle" aria-label="Toggle Language">
+                        <i class="fas fa-language"></i>
+                    </button>
+                    
+                    <!-- Theme Toggle -->
+                    <button id="themeToggle" class="icon-btn" data-testid="button-theme-toggle" aria-label="Toggle Theme">
+                        <i class="fas fa-sun dark-hidden"></i>
+                        <i class="fas fa-moon light-hidden"></i>
+                    </button>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button id="menuToggle" class="md:hidden icon-btn" data-testid="button-menu-toggle" aria-label="Toggle Menu">
+                        <i class="fas fa-bars" id="menuIcon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu md:hidden">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="#home" class="mobile-nav-link" data-testid="link-mobile-home">
+                    <span data-lang="en">Home</span>
+                    <span data-lang="bn" style="display:none;">হোম</span>
+                </a>
+                <a href="#about" class="mobile-nav-link" data-testid="link-mobile-about">
+                    <span data-lang="en">About</span>
+                    <span data-lang="bn" style="display:none;">পরিচিতি</span>
+                </a>
+                <a href="#learn" class="mobile-nav-link" data-testid="link-mobile-learn">
+                    <span data-lang="en">Learn Singing</span>
+                    <span data-lang="bn" style="display:none;">গান শিখুন</span>
+                </a>
+                <a href="#cultural" class="mobile-nav-link" data-testid="link-mobile-cultural">
+                    <span data-lang="en">Cultural Songs</span>
+                    <span data-lang="bn" style="display:none;">সাংস্কৃতিক গান</span>
+                </a>
+                <a href="#instruments" class="mobile-nav-link" data-testid="link-mobile-instruments">
+                    <span data-lang="en">Instruments</span>
+                    <span data-lang="bn" style="display:none;">বাদ্যযন্ত্র</span>
+                </a>
+                <a href="#videos" class="mobile-nav-link" data-testid="link-mobile-videos">
+                    <span data-lang="en">Videos</span>
+                    <span data-lang="bn" style="display:none;">ভিডিও</span>
+                </a>
+                <a href="#contact" class="mobile-nav-link" data-testid="link-mobile-contact">
+                    <span data-lang="en">Contact</span>
+                    <span data-lang="bn" style="display:none;">যোগাযোগ</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20">
+        <div class="absolute inset-0 z-0">
+            <img src="./assets/hero-banner.jpg" alt="Hero Banner" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-gray-900/50 to-gray-900/70"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+            <div class="fade-in-up mb-8">
+                <img src="./assets/logo.png" alt="Logo" class="h-24 w-24 md:h-32 md:w-32 mx-auto mb-6 rounded-2xl shadow-2xl" data-testid="img-hero-logo">
+            </div>
+            
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 fade-in-up animation-delay-200" data-testid="text-hero-title">
+                <span data-lang="en">Basic Knowledge of Singing</span>
+                <span data-lang="bn" style="display:none;" class="font-bengali">গানের মৌলিক জ্ঞান</span>
+            </h1>
+            
+            <p class="text-xl sm:text-2xl md:text-3xl text-gray-200 mb-4 fade-in-up animation-delay-400" data-testid="text-hero-author">
+                <span data-lang="en">Written by <span class="font-semibold text-white">Muhammad Mahin</span></span>
+                <span data-lang="bn" style="display:none;" class="font-bengali">লেখক <span class="font-semibold text-white">মুহাম্মদ মাহিন</span></span>
+            </p>
+            
+            <p class="text-lg sm:text-xl text-gray-300 mb-10 fade-in-up animation-delay-600" data-testid="text-hero-subtitle">
+                <span data-lang="en">Learn Singing, Bangla Cultural Songs & Music Instruments</span>
+                <span data-lang="bn" style="display:none;" class="font-bengali">গান শিখুন, বাংলা সাংস্কৃতিক গান এবং বাদ্যযন্ত্র</span>
+            </p>
+            
+            <a href="#learn" class="inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-primary hover:bg-primary-dark rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 fade-in-up animation-delay-800 backdrop-blur-md" data-testid="button-get-started">
+                <span data-lang="en">Get Started</span>
+                <span data-lang="bn" style="display:none;" class="font-bengali">শুরু করুন</span>
+                <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-2xl opacity-70"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="section-title" data-testid="text-about-title">
+                    <span data-lang="en">About Muhammad Mahin</span>
+                    <span data-lang="bn" style="display:none;" class="font-bengali">মুহাম্মদ মাহিন সম্পর্কে</span>
+                </h2>
+                <div class="section-subtitle">
+                    <span data-lang="en">Singer & Music Enthusiast from Chattogram, Bangladesh</span>
+                    <span data-lang="bn" style="display:none;" class="font-bengali">চট্টগ্রাম, বাংলাদেশের গায়ক এবং সঙ্গীত অনুরাগী</span>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in-left">
+                    <img src="./assets/singer.jpg" alt="Muhammad Mahin" class="rounded-2xl shadow-2xl w-full max-w-md mx-auto" data-testid="img-singer-profile">
+                </div>
+                
+                <div class="fade-in-right space-y-6">
+                    <div class="glass-card p-6 md:p-8">
+                        <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300" data-testid="text-about-description">
+                            <span data-lang="en">
+                                Hello! I'm Muhammad Mahin, a passionate singer from Chattogram, Bangladesh. Currently a 1st-year student, I'm on an exciting journey of learning and mastering the art of singing. Music has always been my passion, and I believe in sharing knowledge with others who share the same love for music.
+                            </span>
+                            <span data-lang="bn" style="display:none;" class="font-bengali">
+                                হ্যালো! আমি মুহাম্মদ মাহিন, চট্টগ্রাম, বাংলাদেশের একজন আবেগপ্রবণ গায়ক। বর্তমানে প্রথম বর্ষের ছাত্র হিসেবে, আমি গানের শিল্প শেখা এবং আয়ত্ত করার একটি উত্তেজনাপূর্ণ যাত্রায় আছি। সঙ্গীত সবসময়ই আমার আবেগ, এবং আমি বিশ্বাস করি যে সঙ্গীতের প্রতি একই ভালোবাসা ভাগ করে নেওয়া অন্যদের সাথে জ্ঞান ভাগ করে নিতে।
+                            </span>
+                        </p>
+                    </div>
+                    
+                    <div class="glass-card p-6 md:p-8">
+                        <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                            <span data-lang="en">
+                                Through this website, I aim to share the basic knowledge of singing, including vocal techniques, breathing exercises, and the rich heritage of Bangla cultural songs. Whether you're a beginner or looking to improve your skills, this platform is designed to help you on your musical journey.
+                            </span>
+                            <span data-lang="bn" style="display:none;" class="font-bengali">
+                                এই ওয়েবসাইটের মাধ্যমে, আমি গানের মৌলিক জ্ঞান শেয়ার করার লক্ষ্য রাখি, যার মধ্যে রয়েছে কণ্ঠ কৌশল, শ্বাসপ্রশ্বাসের ব্যায়াম এবং বাংলা সাংস্কৃতিক গানের সমৃদ্ধ ঐতিহ্য। আপনি শিক্ষানবিস হোন বা আপনার দক্ষতা উন্নত করতে চান, এই প্ল্যাটফর্মটি আপনার সঙ্গীত যাত্রায় সহায়তা করার জন্য ডিজাইন করা হয়েছে।
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learn Singing Section -->
+    <section id="learn" class="py-16 md:py-24 bg-white dark:bg-gray-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="section-title" data-testid="text-learn-title">
+                    <span data-lang="en">Learn Singing Basics</span>
+                    <span data-lang="bn" style="display:none;" class="font-bengali">গানের মৌলিক শিক্ষা</span>
+                </h2>
+                <div class="section-subtitle">
+                    <span data-lang="en">Master the fundamentals of vocal performance</span>
+                    <span data-lang="bn" style="display:none;" class="font-bengali">কণ্ঠ পরিবেশনার মূল বিষয়গুলি আয়ত্ত করুন</span>
+                </div>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
+                <!-- Card 1: Vocal Warm-ups -->
+                <div class="glass-card p-8 hover-card" data-testid="card-vocal-warmup">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 text-white mb-4">
+                            <i class="fas fa-fire text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+                            <span data-lang="en">Vocal Warm-ups</span>
+                            <span data-lang="bn" style="display:none;" class="font-bengali">কণ্ঠস্বর ওয়ার্ম-আপ</span>
+                        </h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <span data-lang="en">
+                            Start your singing session with proper vocal warm-up exercises. Learn lip trills, humming techniques, and gentle scales to prepare your voice and prevent strain.
+                        </span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">
+                            সঠিক কণ্ঠস্বর ওয়ার্ম-আপ ব্যায়ামের সাথে আপনার গান সেশন শুরু করুন। ঠোঁট ট্রিল, হামমিং কৌশল এবং মৃদু স্কেল শিখুন আপনার কণ্ঠস্বর প্রস্তুত করতে এবং চাপ প্রতিরোধ করতে।
+                        </span>
+                    </p>
+                </div>
+                
+                <!-- Card 2: Breathing Techniques -->
+                <div class="glass-card p-8 hover-card" data-testid="card-breathing">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-teal-600 text-white mb-4">
+                            <i class="fas fa-wind text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+                            <span data-lang="en">Breathing Techniques</span>
+                            <span data-lang="bn" style="display:none;" class="font-bengali">শ্বাসপ্রশ্বাসের কৌশল</span>
+                        </h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <span data-lang="en">
+                            Master diaphragmatic breathing for better vocal control. Learn to breathe from your belly, manage breath support, and sustain long notes with confidence.
+                        </span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">
+                            ভাল কণ্ঠ নিয়ন্ত্রণের জন্য ডায়াফ্রাম্যাটিক শ্বাসপ্রশ্বাস আয়ত্ত করুন। আপনার পেট থেকে শ্বাস নিতে, শ্বাস সমর্থন পরিচালনা করতে এবং আত্মবিশ্বাসের সাথে দীর্ঘ নোট বজায় রাখতে শিখুন।
+                        </span>
+                    </p>
+                </div>
+                
+                <!-- Card 3: Pitch Control -->
+                <div class="glass-card p-8 hover-card" data-testid="card-pitch">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-orange-500 to-red-600 text-white mb-4">
+                            <i class="fas fa-music text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+                            <span data-lang="en">Pitch Control</span>
+                            <span data-lang="bn" style="display:none;" class="font-bengali">পিচ নিয়ন্ত্রণ</span>
+                        </h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <span data-lang="en">
+                            Develop your ear for music and learn to sing in tune. Practice scales, intervals, and matching pitches to improve your vocal accuracy and musical expression.
+                        </span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">
+                            সঙ্গীতের জন্য আপনার কান বিকশিত করুন এবং সুরে গাইতে শিখুন। আপনার কণ্ঠ নির্ভুলতা এবং সঙ্গীত অভিব্যক্তি উন্নত করতে স্কেল, ব্যবধান এবং পিচ মিলান অনুশীলন করুন।
+                        </span>
+                    </p>
+                </div>
+                
+                <!-- Card 4: Posture & Stance -->
+                <div class="glass-card p-8 hover-card" data-testid="card-posture">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-pink-500 to-rose-600 text-white mb-4">
+                            <i class="fas fa-user-check text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+                            <span data-lang="en">Posture & Stance</span>
+                            <span data-lang="bn" style="display:none;" class="font-bengali">ভঙ্গি এবং অবস্থান</span>
+                        </h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <span data-lang="en">
+                            Learn proper singing posture for optimal breath flow and vocal production. Stand tall with relaxed shoulders and aligned spine for best sound quality.
+                        </span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">
+                            সর্বোত্তম শ্বাস প্রবাহ এবং কণ্ঠস্বর উৎপাদনের জন্য সঠিক গানের ভঙ্গি শিখুন। সেরা শব্দ গুণমানের জন্য শিথিল কাঁধ এবং সারিবদ্ধ মেরুদণ্ড সহ লম্বা দাঁড়ান।
+                        </span>
+                    </p>
+                </div>
+                
+                <!-- Card 5: Vocal Range -->
+                <div class="glass-card p-8 hover-card" data-testid="card-vocal-range">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-blue-600 text-white mb-4">
+                            <i class="fas fa-chart-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+                            <span data-lang="en">Vocal Range Development</span>
+                            <span data-lang="bn" style="display:none;" class="font-bengali">কণ্ঠস্বর পরিসীমা উন্নয়ন</span>
+                        </h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <span data-lang="en">
+                            Expand your vocal range safely with targeted exercises. Practice high notes with proper technique and strengthen your lower register for fuller sound.
+                        </span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">
+                            লক্ষ্যযুক্ত ব্যায়ামের সাথে নিরাপদে আপনার কণ্ঠস্বর পরিসীমা প্রসারিত করুন। সঠিক কৌশল দিয়ে উচ্চ নোট অনুশীলন করুন এবং পূর্ণ শব্দের জন্য আপনার নিম্ন রেজিস্টার শক্তিশালী করুন।
+                        </span>
+                    </p>
+                </div>
+                
+                <!-- Card 6: Tone Quality -->
+                <div class="glass-card p-8 hover-card" data-testid="card-tone">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-yellow-500 to-amber-600 text-white mb-4">
+                            <i class="fas fa-gem text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+                            <span data-lang="en">Tone & Resonance</span>
+                            <span data-lang="bn" style="display:none;" class="font-bengali">সুর এবং অনুরণন</span>
+                        </h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <span data-lang="en">
+                            Develop a rich, resonant tone through proper vocal placement. Learn to use your natural resonators for a beautiful, professional singing voice.
+                        </span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">
+                            সঠিক কণ্ঠ স্থাপনার মাধ্যমে একটি সমৃদ্ধ, অনুরণিত সুর বিকাশ করুন। একটি সুন্দর, পেশাদার গানের কণ্ঠের জন্য আপনার প্রাকৃতিক অনুরণনকারী ব্যবহার করতে শিখুন।
+                        </span>
+                    </p>
+                </div>
+                
+                <!-- Card 7: Diction -->
+                <div class="glass-card p-8 hover-card" data-testid="card-diction">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500 to-teal-600 text-white mb-4">
+                            <i class="fas fa-comment-dots text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+                            <span data-lang="en">Diction & Articulation</span>
+                            <span data-lang="bn" style="display:none;" class="font-bengali">উচ্চারণ এবং স্পষ্টতা</span>
+                        </h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <span data-lang="en">
+                            Practice clear articulation and proper pronunciation for both English and Bangla lyrics. Make every word count with precise, expressive diction.
+                        </span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">
+                            ইংরেজি এবং বাংলা উভয় গানের কথার জন্য স্পষ্ট উচ্চারণ এবং সঠিক উচ্চারণ অনুশীলন করুন। সুনির্দিষ্ট, অভিব্যক্তিপূর্ণ উচ্চারণের সাথে প্রতিটি শব্দ গণনা করুন।
+                        </span>
+                    </p>
+                </div>
+                
+                <!-- Card 8: Performance Skills -->
+                <div class="glass-card p-8 hover-card" data-testid="card-performance">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-violet-500 to-purple-600 text-white mb-4">
+                            <i class="fas fa-star text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+                            <span data-lang="en">Performance Tips</span>
+                            <span data-lang="bn" style="display:none;" class="font-bengali">পরিবেশনার পরামর্শ</span>
+                        </h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <span data-lang="en">
+                            Build confidence and stage presence. Learn to connect with your audience emotionally while delivering technically sound performances.
+                        </span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">
+                            আত্মবিশ্বাস এবং মঞ্চ উপস্থিতি তৈরি করুন। প্রযুক্তিগতভাবে সুষ্ঠু পারফরম্যান্স প্রদান করার সময় আবেগগতভাবে আপনার দর্শকদের সাথে সংযোগ করতে শিখুন।
+                        </span>
+                    </p>
+                </div>
+                
+                <!-- Card 9: Vocal Health -->
+                <div class="glass-card p-8 hover-card" data-testid="card-vocal-health">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-green-600 text-white mb-4">
+                            <i class="fas fa-heart text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">
+                            <span data-lang="en">Vocal Health Care</span>
+                            <span data-lang="bn" style="display:none;" class="font-bengali">কণ্ঠস্বর স্বাস্থ্য যত্ন</span>
+                        </h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <span data-lang="en">
+                            Protect your voice with proper care. Stay hydrated, avoid vocal strain, and learn when to rest for long-term vocal health and longevity.
+                        </span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">
+                            সঠিক যত্ন দিয়ে আপনার কণ্ঠস্বর রক্ষা করুন। হাইড্রেটেড থাকুন, কণ্ঠস্বর চাপ এড়িয়ে চলুন এবং দীর্ঘমেয়াদী কণ্ঠ স্বাস্থ্য এবং দীর্ঘায়ু জন্য কখন বিশ্রাম নিতে হবে তা শিখুন।
+                        </span>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Detailed Practice Guide -->
+            <div class="glass-card p-8 md:p-12 mb-8">
+                <h3 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white text-center">
+                    <span data-lang="en">Daily Practice Routine</span>
+                    <span data-lang="bn" style="display:none;" class="font-bengali">দৈনিক অনুশীলন রুটিন</span>
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4 text-primary">
+                            <span data-lang="en">Beginner Level (15-20 minutes)</span>
+                            <span data-lang="bn" style="display:none;" class="font-bengali">শিক্ষানবিস স্তর (১৫-২০ মিনিট)</span>
+                        </h4>
+                        <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <span class="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 text-sm font-bold flex-shrink-0">1</span>
+                                <span>
+                                    <span data-lang="en">5 min: Body relaxation and breathing exercises</span>
+                                    <span data-lang="bn" style="display:none;" class="font-bengali">৫ মিনিট: শরীর শিথিলকরণ এবং শ্বাসপ্রশ্বাসের ব্যায়াম</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 text-sm font-bold flex-shrink-0">2</span>
+                                <span>
+                                    <span data-lang="en">5 min: Vocal warm-ups (humming, lip trills)</span>
+                                    <span data-lang="bn" style="display:none;" class="font-bengali">৫ মিনিট: কণ্ঠ ওয়ার্ম-আপ (হুমিং, লিপ ট্রিল)</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 text-sm font-bold flex-shrink-0">3</span>
+                                <span>
+                                    <span data-lang="en">5 min: Simple scales and pitch matching</span>
+                                    <span data-lang="bn" style="display:none;" class="font-bengali">৫ মিনিট: সহজ স্কেল এবং পিচ মিলান</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 text-sm font-bold flex-shrink-0">4</span>
+                                <span>
+                                    <span data-lang="en">5 min: Practice a simple song</span>
+                                    <span data-lang="bn" style="display:none;" class="font-bengali">৫ মিনিট: একটি সহজ গান অনুশীলন করুন</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4 text-primary">
+                            <span data-lang="en">Intermediate Level (30-40 minutes)</span>
+                            <span data-lang="bn" style="display:none;" class="font-bengali">মধ্যবর্তী স্তর (৩০-৪০ মিনিট)</span>
+                        </h4>
+                        <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <span class="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 text-sm font-bold flex-shrink-0">1</span>
+                                <span>
+                                    <span data-lang="en">5 min: Advanced breathing control exercises</span>
+                                    <span data-lang="bn" style="display:none;" class="font-bengali">৫ মিনিট: উন্নত শ্বাস নিয়ন্ত্রণ ব্যায়াম</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 text-sm font-bold flex-shrink-0">2</span>
+                                <span>
+                                    <span data-lang="en">10 min: Vocal warm-ups and range expansion</span>
+                                    <span data-lang="bn" style="display:none;" class="font-bengali">১০ মিনিট: কণ্ঠ ওয়ার্ম-আপ এবং পরিসীমা সম্প্রসারণ</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 text-sm font-bold flex-shrink-0">3</span>
+                                <span>
+                                    <span data-lang="en">10 min: Work on tone quality and resonance</span>
+                                    <span data-lang="bn" style="display:none;" class="font-bengali">১০ মিনিট: সুর গুণমান এবং অনুরণন কাজ</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 text-sm font-bold flex-shrink-0">4</span>
+                                <span>
+                                    <span data-lang="en">10 min: Practice challenging songs with expression</span>
+                                    <span data-lang="bn" style="display:none;" class="font-bengali">১০ মিনিট: অভিব্যক্তি সহ চ্যালেঞ্জিং গান অনুশীলন</span>
+                                </span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 text-sm font-bold flex-shrink-0">5</span>
+                                <span>
+                                    <span data-lang="en">5 min: Cool-down exercises</span>
+                                    <span data-lang="bn" style="display:none;" class="font-bengali">৫ মিনিট: কুল-ডাউন ব্যায়াম</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tips Section -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card p-8">
+                    <h4 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white flex items-center">
+                        <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                        <span data-lang="en">Do's</span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">করণীয়</span>
+                    </h4>
+                    <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                            <span>
+                                <span data-lang="en">Drink plenty of water before and during practice</span>
+                                <span data-lang="bn" style="display:none;" class="font-bengali">অনুশীলনের আগে এবং সময় প্রচুর পানি পান করুন</span>
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                            <span>
+                                <span data-lang="en">Always warm up before singing</span>
+                                <span data-lang="bn" style="display:none;" class="font-bengali">গান গাওয়ার আগে সবসময় ওয়ার্ম আপ করুন</span>
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                            <span>
+                                <span data-lang="en">Practice regularly for best results</span>
+                                <span data-lang="bn" style="display:none;" class="font-bengali">সেরা ফলাফলের জন্য নিয়মিত অনুশীলন করুন</span>
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                            <span>
+                                <span data-lang="en">Record yourself to track progress</span>
+                                <span data-lang="bn" style="display:none;" class="font-bengali">অগ্রগতি ট্র্যাক করতে নিজেকে রেকর্ড করুন</span>
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                            <span>
+                                <span data-lang="en">Rest your voice when tired</span>
+                                <span data-lang="bn" style="display:none;" class="font-bengali">ক্লান্ত হলে আপনার কণ্ঠস্বর বিশ্রাম দিন</span>
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                            <span>
+                                <span data-lang="en">Maintain good posture while singing</span>
+                                <span data-lang="bn" style="display:none;" class="font-bengali">গান গাওয়ার সময় ভাল ভঙ্গি বজায় রাখুন</span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="glass-card p-8">
+                    <h4 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white flex items-center">
+                        <i class="fas fa-times-circle text-red-500 mr-3"></i>
+                        <span data-lang="en">Don'ts</span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">বর্জনীয়</span>
+                    </h4>
+                    <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                            <span>
+                                <span data-lang="en">Don't sing with a sore throat</span>
+                                <span data-lang="bn" style="display:none;" class="font-bengali">গলা ব্যথা সহ গান গাইবেন না</span>
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                            <span>
+                                <span data-lang="en">Avoid shouting or straining your voice</span>
+                                <span data-lang="bn" style="display:none;" class="font-bengali">চিৎকার বা আপনার কণ্ঠস্বর চাপ এড়িয়ে চলুন</span>
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                            <span>
+                                <span data-lang="en">Don't practice for too long without breaks</span>
+                                <span data-lang="bn" style="display:none;" class="font-bengali">বিরতি ছাড়া খুব দীর্ঘ সময় অনুশীলন করবেন না</span>
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                            <span>
+                                <span data-lang="en">Avoid cold drinks before singing</span>
+                                <span data-lang="bn" style="display:none;" class="font-bengali">গান গাওয়ার আগে ঠান্ডা পানীয় এড়িয়ে চলুন</span>
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                            <span>
+                                <span data-lang="en">Don't compare yourself to others</span>
+                                <span data-lang="bn" style="display:none;" class="font-bengali">নিজেকে অন্যদের সাথে তুলনা করবেন না</span>
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                            <span>
+                                <span data-lang="en">Don't skip breathing exercises</span>
+                                <span data-lang="bn" style="display:none;" class="font-bengali">শ্বাসপ্রশ্বাসের ব্যায়াম এড়িয়ে যাবেন না</span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bangla Cultural Songs Section -->
+    <section id="cultural" class="py-16 md:py-24 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-900 dark:to-purple-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="section-title" data-testid="text-cultural-title">
+                    <span data-lang="en">Bangla Cultural Songs</span>
+                    <span data-lang="bn" style="display:none;" class="font-bengali">বাংলা সাংস্কৃতিক গান</span>
+                </h2>
+                <div class="section-subtitle">
+                    <span data-lang="en">Explore the rich heritage of Bengali music</span>
+                    <span data-lang="bn" style="display:none;" class="font-bengali">বাঙালি সঙ্গীতের সমৃদ্ধ ঐতিহ্য অন্বেষণ করুন</span>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="glass-card p-8 hover-card" data-testid="card-cultural-info">
+                    <img src="./assets/bangla-song.jpg" alt="Bangla Cultural Songs" class="rounded-xl w-full h-64 object-cover mb-6">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+                        <span data-lang="en">Traditional Bengali Music</span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">ঐতিহ্যবাহী বাংলা সঙ্গীত</span>
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+                        <span data-lang="en">
+                            Bengali cultural songs represent a beautiful blend of classical and folk traditions. From Rabindra Sangeet to Baul songs, our rich musical heritage offers diverse styles and emotions.
+                        </span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">
+                            বাংলা সাংস্কৃতিক গান শাস্ত্রীয় এবং লোক ঐতিহ্যের একটি সুন্দর মিশ্রণ প্রতিনিধিত্ব করে। রবীন্দ্র সংগীত থেকে বাউল গান পর্যন্ত, আমাদের সমৃদ্ধ সঙ্গীত ঐতিহ্য বৈচিত্র্যময় শৈলী এবং আবেগ প্রদান করে।
+                        </span>
+                    </p>
+                </div>
+                
+                <div class="glass-card p-8 hover-card">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+                        <span data-lang="en">Learning Resources</span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">শিক্ষা সংস্থান</span>
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary text-xl mr-3 mt-1"></i>
+                            <span class="text-gray-600 dark:text-gray-400">
+                                <span data-lang="en">Pronunciation guides for Bengali lyrics</span>
+                                <span data-lang="bn" style="display:none;" class="font-bengali">বাংলা গানের কথার উচ্চারণ নির্দেশিকা</span>
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary text-xl mr-3 mt-1"></i>
+                            <span class="text-gray-600 dark:text-gray-400">
+                                <span data-lang="en">Traditional rhythms and talas</span>
+                                <span data-lang="bn" style="display:none;" class="font-bengali">ঐতিহ্যবাহী ছন্দ এবং তাল</span>
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary text-xl mr-3 mt-1"></i>
+                            <span class="text-gray-600 dark:text-gray-400">
+                                <span data-lang="en">Historical context and cultural significance</span>
+                                <span data-lang="bn" style="display:none;" class="font-bengali">ঐতিহাসিক প্রেক্ষাপট এবং সাংস্কৃতিক তাৎপর্য</span>
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-primary text-xl mr-3 mt-1"></i>
+                            <span class="text-gray-600 dark:text-gray-400">
+                                <span data-lang="en">Step-by-step song tutorials</span>
+                                <span data-lang="bn" style="display:none;" class="font-bengali">ধাপে ধাপে গান টিউটোরিয়াল</span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instrument Tutorials Section -->
+    <section id="instruments" class="py-16 md:py-24 bg-white dark:bg-gray-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="section-title" data-testid="text-instruments-title">
+                    <span data-lang="en">Musical Instruments</span>
+                    <span data-lang="bn" style="display:none;" class="font-bengali">বাদ্যযন্ত্র</span>
+                </h2>
+                <div class="section-subtitle">
+                    <span data-lang="en">Learn traditional and modern instruments</span>
+                    <span data-lang="bn" style="display:none;" class="font-bengali">ঐতিহ্যবাহী এবং আধুনিক বাদ্যযন্ত্র শিখুন</span>
+                </div>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <!-- Harmonium -->
+                <div class="glass-card p-6 hover-card text-center" data-testid="card-harmonium">
+                    <div class="mb-6">
+                        <div class="w-full h-48 rounded-xl overflow-hidden mb-4">
+                            <img src="./assets/instruments.jpg" alt="Harmonium" class="w-full h-full object-cover">
+                        </div>
+                        <i class="fas fa-keyboard text-5xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">
+                        <span data-lang="en">Harmonium</span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">হারমোনিয়াম</span>
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        <span data-lang="en">Essential for classical and devotional music</span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">শাস্ত্রীয় এবং ভক্তিমূলক সঙ্গীতের জন্য প্রয়োজনীয়</span>
+                    </p>
+                </div>
+                
+                <!-- Tabla -->
+                <div class="glass-card p-6 hover-card text-center" data-testid="card-tabla">
+                    <div class="mb-6">
+                        <div class="w-full h-48 rounded-xl overflow-hidden mb-4">
+                            <img src="./assets/instruments.jpg" alt="Tabla" class="w-full h-full object-cover">
+                        </div>
+                        <i class="fas fa-drum text-5xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">
+                        <span data-lang="en">Tabla</span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">তবলা</span>
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        <span data-lang="en">Traditional percussion instrument with complex rhythms</span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">জটিল ছন্দ সহ ঐতিহ্যবাহী পার্কশন যন্ত্র</span>
+                    </p>
+                </div>
+                
+                <!-- Guitar -->
+                <div class="glass-card p-6 hover-card text-center" data-testid="card-guitar">
+                    <div class="mb-6">
+                        <div class="w-full h-48 rounded-xl overflow-hidden mb-4">
+                            <img src="./assets/instruments.jpg" alt="Guitar" class="w-full h-full object-cover">
+                        </div>
+                        <i class="fas fa-guitar text-5xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">
+                        <span data-lang="en">Guitar</span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">গিটার</span>
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        <span data-lang="en">Popular for modern songs and accompaniment</span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">আধুনিক গান এবং সঙ্গতের জন্য জনপ্রিয়</span>
+                    </p>
+                </div>
+                
+                <!-- Flute -->
+                <div class="glass-card p-6 hover-card text-center" data-testid="card-flute">
+                    <div class="mb-6">
+                        <div class="w-full h-48 rounded-xl overflow-hidden mb-4">
+                            <img src="./assets/instruments.jpg" alt="Flute" class="w-full h-full object-cover">
+                        </div>
+                        <i class="fas fa-music text-5xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">
+                        <span data-lang="en">Flute (Bansuri)</span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">বাঁশি</span>
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        <span data-lang="en">Melodious bamboo flute for classical music</span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">শাস্ত্রীয় সঙ্গীতের জন্য মধুর বাঁশের বাঁশি</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Tutorials Section -->
+    <section id="videos" class="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-blue-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="section-title" data-testid="text-videos-title">
+                    <span data-lang="en">Video Tutorials</span>
+                    <span data-lang="bn" style="display:none;" class="font-bengali">ভিডিও টিউটোরিয়াল</span>
+                </h2>
+                <div class="section-subtitle">
+                    <span data-lang="en">Watch and learn from video lessons</span>
+                    <span data-lang="bn" style="display:none;" class="font-bengali">ভিডিও পাঠ থেকে দেখুন এবং শিখুন</span>
+                </div>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Video 1 -->
+                <div class="glass-card p-4 hover-card" data-testid="card-video-1">
+                    <div class="aspect-video rounded-lg overflow-hidden mb-4">
+                        <iframe 
+                            class="w-full h-full" 
+                            src="https://www.youtube.com/embed/q0hyYWKXF0Q" 
+                            title="Singing Tutorial 1"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                        <span data-lang="en">Vocal Technique Tutorial</span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">কণ্ঠ কৌশল টিউটোরিয়াল</span>
+                    </h3>
+                </div>
+                
+                <!-- Video 2 -->
+                <div class="glass-card p-4 hover-card" data-testid="card-video-2">
+                    <div class="aspect-video rounded-lg overflow-hidden mb-4">
+                        <iframe 
+                            class="w-full h-full" 
+                            src="https://www.youtube.com/embed/p5tZ5OxkKxM" 
+                            title="Singing Tutorial 2"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                        <span data-lang="en">Breathing Exercises</span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">শ্বাসপ্রশ্বাসের ব্যায়াম</span>
+                    </h3>
+                </div>
+                
+                <!-- Video 3 -->
+                <div class="glass-card p-4 hover-card" data-testid="card-video-3">
+                    <div class="aspect-video rounded-lg overflow-hidden mb-4">
+                        <iframe 
+                            class="w-full h-full" 
+                            src="https://www.youtube.com/embed/OPf0YbXqDm0" 
+                            title="Singing Tutorial 3"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                        <span data-lang="en">Song Performance Tips</span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">গান পরিবেশনা টিপস</span>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Social Media Section -->
+    <section id="contact" class="py-16 md:py-24 bg-white dark:bg-gray-950">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="section-title" data-testid="text-contact-title">
+                    <span data-lang="en">Connect With Me</span>
+                    <span data-lang="bn" style="display:none;" class="font-bengali">আমার সাথে যোগাযোগ করুন</span>
+                </h2>
+                <div class="section-subtitle">
+                    <span data-lang="en">Follow on social media for updates</span>
+                    <span data-lang="bn" style="display:none;" class="font-bengali">আপডেটের জন্য সোশ্যাল মিডিয়াতে ফলো করুন</span>
+                </div>
+            </div>
+            
+            <div class="glass-card p-8 md:p-12">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                    <!-- YouTube -->
+                    <a href="#" class="social-link" data-testid="link-youtube" aria-label="YouTube">
+                        <i class="fab fa-youtube text-4xl text-red-600"></i>
+                        <span class="mt-2 text-sm font-medium">YouTube</span>
+                    </a>
+                    
+                    <!-- Facebook -->
+                    <a href="#" class="social-link" data-testid="link-facebook" aria-label="Facebook">
+                        <i class="fab fa-facebook text-4xl text-blue-600"></i>
+                        <span class="mt-2 text-sm font-medium">Facebook</span>
+                    </a>
+                    
+                    <!-- Instagram -->
+                    <a href="#" class="social-link" data-testid="link-instagram" aria-label="Instagram">
+                        <i class="fab fa-instagram text-4xl text-pink-600"></i>
+                        <span class="mt-2 text-sm font-medium">Instagram</span>
+                    </a>
+                    
+                    <!-- TikTok -->
+                    <a href="#" class="social-link" data-testid="link-tiktok" aria-label="TikTok">
+                        <i class="fab fa-tiktok text-4xl text-gray-900 dark:text-white"></i>
+                        <span class="mt-2 text-sm font-medium">TikTok</span>
+                    </a>
+                    
+                    <!-- Spotify -->
+                    <a href="#" class="social-link" data-testid="link-spotify" aria-label="Spotify">
+                        <i class="fab fa-spotify text-4xl text-green-600"></i>
+                        <span class="mt-2 text-sm font-medium">Spotify</span>
+                    </a>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <p class="text-gray-600 dark:text-gray-400">
+                        <span data-lang="en">
+                            Stay tuned for updates, new tutorials, and singing tips! 
+                            <br class="hidden sm:inline">
+                            Feel free to reach out with questions or suggestions.
+                        </span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">
+                            আপডেট, নতুন টিউটোরিয়াল এবং গান গাওয়ার টিপসের জন্য সাথে থাকুন!
+                            <br class="hidden sm:inline">
+                            প্রশ্ন বা পরামর্শ নিয়ে যোগাযোগ করতে নির্দ্বিধায়।
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">
+                        <span data-lang="en">About This Website</span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">এই ওয়েবসাইট সম্পর্কে</span>
+                    </h3>
+                    <p class="text-gray-400 text-sm">
+                        <span data-lang="en">
+                            A bilingual educational platform dedicated to teaching the fundamentals of singing and Bengali cultural music.
+                        </span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">
+                            গানের মৌলিক এবং বাংলা সাংস্কৃতিক সঙ্গীত শেখানোর জন্য একটি দ্বিভাষিক শিক্ষামূলক প্ল্যাটফর্ম।
+                        </span>
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">
+                        <span data-lang="en">Quick Links</span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">দ্রুত লিংক</span>
+                    </h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">
+                            <span data-lang="en">Home</span>
+                            <span data-lang="bn" style="display:none;">হোম</span>
+                        </a></li>
+                        <li><a href="#learn" class="text-gray-400 hover:text-white transition-colors">
+                            <span data-lang="en">Learn Singing</span>
+                            <span data-lang="bn" style="display:none;">গান শিখুন</span>
+                        </a></li>
+                        <li><a href="#instruments" class="text-gray-400 hover:text-white transition-colors">
+                            <span data-lang="en">Instruments</span>
+                            <span data-lang="bn" style="display:none;">বাদ্যযন্ত্র</span>
+                        </a></li>
+                        <li><a href="#videos" class="text-gray-400 hover:text-white transition-colors">
+                            <span data-lang="en">Videos</span>
+                            <span data-lang="bn" style="display:none;">ভিডিও</span>
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <!-- Author Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">
+                        <span data-lang="en">Credits</span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">কৃতিত্ব</span>
+                    </h3>
+                    <p class="text-gray-400 text-sm mb-2">
+                        <span data-lang="en">Written by:</span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">লেখক:</span>
+                        <br>
+                        <span class="text-white font-semibold">Muhammad Mahin</span>
+                    </p>
+                    <p class="text-gray-400 text-sm">
+                        <span data-lang="en">Developed by:</span>
+                        <span data-lang="bn" style="display:none;" class="font-bengali">ডেভেলপার:</span>
+                        <br>
+                        <span class="text-white font-semibold">Farhan Muh Tasim</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400 text-sm" data-testid="text-copyright">
+                    © 2025 Farhan Muh Tasim | Developed by Farhan | All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+# GitHub Pages Configuration
+# For Basic Knowledge of Singing Website
+
+theme: jekyll-theme-minimal
+title: Basic Knowledge of Singing
+description: A bilingual educational website for learning singing, Bangla cultural songs, and music instruments
+author: Farhan Muh Tasim
+
+# Build settings
+markdown: kramdown
+
+# Exclude files
+exclude:
+  - node_modules/
+  - package.json
+  - package-lock.json
+  - README.md
+  - .gitignore
+
+# Include files
+include:
+  - public/
+
+# Deployment
+baseurl: ""
+url: "https://yourusername.github.io"
+
+# GitHub Pages will serve from the root directory
+# Make sure your index.html is in the public folder or move it to root

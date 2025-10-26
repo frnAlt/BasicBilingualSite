@@ -1,0 +1,354 @@
+/* Custom Styles for Basic Knowledge of Singing */
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Dark mode hidden elements */
+.dark .dark-hidden {
+    display: none;
+}
+
+.light-hidden {
+    display: none;
+}
+
+.dark .light-hidden {
+    display: block;
+}
+
+/* Glass Morphism Effect */
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    transition: all 0.3s ease;
+}
+
+.dark .glass-card {
+    background: rgba(17, 24, 39, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.glass-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
+}
+
+.dark .glass-card:hover {
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Hover Card Animation */
+.hover-card {
+    transition: all 0.3s ease;
+}
+
+.hover-card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+/* Navigation Links */
+.nav-link {
+    position: relative;
+    padding: 0.5rem 1rem;
+    color: rgba(55, 65, 81, 1);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 0.5rem;
+}
+
+.dark .nav-link {
+    color: rgba(229, 231, 235, 1);
+}
+
+.nav-link:hover {
+    color: #2563eb;
+    background: rgba(37, 99, 235, 0.1);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.mobile-menu.active {
+    max-height: 500px;
+}
+
+.mobile-nav-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: rgba(55, 65, 81, 1);
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.dark .mobile-nav-link {
+    color: rgba(229, 231, 235, 1);
+}
+
+.mobile-nav-link:hover {
+    background: rgba(37, 99, 235, 0.1);
+    color: #2563eb;
+}
+
+/* Icon Buttons */
+.icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    background: rgba(243, 244, 246, 1);
+    color: rgba(55, 65, 81, 1);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.dark .icon-btn {
+    background: rgba(31, 41, 55, 1);
+    color: rgba(229, 231, 235, 1);
+}
+
+.icon-btn:hover {
+    background: rgba(37, 99, 235, 0.1);
+    color: #2563eb;
+    transform: scale(1.1);
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 3rem;
+    }
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: rgba(107, 114, 128, 1);
+    font-weight: 500;
+}
+
+.dark .section-subtitle {
+    color: rgba(156, 163, 175, 1);
+}
+
+@media (min-width: 768px) {
+    .section-subtitle {
+        font-size: 1.25rem;
+    }
+}
+
+/* Social Links */
+.social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background: rgba(243, 244, 246, 0.5);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: rgba(55, 65, 81, 1);
+}
+
+.dark .social-link {
+    background: rgba(31, 41, 55, 0.5);
+    color: rgba(229, 231, 235, 1);
+}
+
+.social-link:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.dark .social-link:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Fade In Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.fade-in-left {
+    animation: fadeInLeft 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.fade-in-right {
+    animation: fadeInRight 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.animation-delay-200 {
+    animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+    animation-delay: 0.4s;
+}
+
+.animation-delay-600 {
+    animation-delay: 0.6s;
+}
+
+.animation-delay-800 {
+    animation-delay: 0.8s;
+}
+
+/* Navbar Scroll Effect */
+#navbar.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dark #navbar.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Video Containers */
+.aspect-video {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.aspect-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Loading Animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Hover Elevate Effect */
+.hover-elevate {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.hover-elevate:hover {
+    transform: translateY(-2px);
+}
+
+/* Bengali Font Support */
+.font-bengali {
+    font-family: 'Noto Sans Bengali', sans-serif;
+}
+
+/* Smooth Transitions */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(243, 244, 246, 1);
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: rgba(17, 24, 39, 1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(37, 99, 235, 0.5);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(37, 99, 235, 0.8);
+}
+
+/* Focus States for Accessibility */
+a:focus,
+button:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    nav,
+    footer,
+    #themeToggle,
+    #langToggle,
+    #menuToggle {
+        display: none;
+    }
+}
