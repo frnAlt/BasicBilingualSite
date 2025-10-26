@@ -1,0 +1,70 @@
+Create a fully responsive, professional, bilingual (Bangla + English) website project named **“Basic Knowledge of Singing”**, written by **Muhammad Mahin** and developed by **Farhan Muh Tasim**.
+
+🧩 Website Overview:
+- Title: Basic Knowledge of Singing
+- Author: Muhammad Mahin
+- Developer: Farhan Muh Tasim
+- Description: A bilingual, modern educational website for learning singing, Bangla cultural songs, and music instruments.
+- Copyright: © 2025 Farhan Muh Tasim
+
+🎨 Design Requirements:
+- Use **TailwindCSS** for styling.
+- Include **Dark 🌑 / Light ☀️ mode** toggle button.
+- Include **Language switcher (English ↔ বাংলা)**.
+- Use **smooth animations (Framer Motion or CSS transitions)**.
+- Include responsive navbar, hero banner, cards, and embedded videos.
+- Modern typography, rounded shapes, glass effect for cards, and gradient backgrounds.
+
+📄 Pages/Sections:
+1. **Home:** Hero section with logo, banner image, and welcome text.
+2. **About:** Info about Muhammad Mahin (Singer from Chattogram, Bangladesh; 1st-year student, learning and singing songs).
+3. **Learn Singing:** Step-by-step singing basics (vocal warm-ups, breathing, pitch).
+4. **Bangla Cultural Songs:** Tutorials (Bangla & English) with sample YouTube embeds.
+5. **Instrument Tutorials:** Harmonium, Tabla, Guitar, Flute sections with image and text.
+6. **Video Tutorials:** Embedded YouTube playlist (use sample links).
+7. **Contact & Social Media:** Template for YouTube, Facebook, Instagram, TikTok, Spotify links (add placeholders only).
+
+📸 Assets:
+- Include an `assets/` folder with example files:
+  - `logo.png` (example logo)
+  - `singer.jpg`
+  - `instruments.jpg`
+  - `bangla-song.jpg`
+- Favicon using the logo image.
+
+🎵 Embedded Example YouTube Videos:
+- https://www.youtube.com/watch?v=q0hyYWKXF0Q
+- https://www.youtube.com/watch?v=p5tZ5OxkKxM
+- https://www.youtube.com/watch?v=OPf0YbXqDm0
+
+⚙️ Technical Requirements:
+- `index.html`: Main layout with all sections.
+- `style.css`: Optional extra custom styles.
+- `script.js`: 
+  - Handles dark/light mode toggle.
+  - Handles English ↔ Bangla text toggle (with `localStorage` save).
+- `_config.yml`: For GitHub Pages compatibility.
+- `vercel.json`: For Vercel deployment config.
+- `README.md`: Project description and setup instructions.
+
+📱 Responsiveness:
+- Works on all screen sizes (mobile → desktop).
+- Hero section adapts to portrait/landscape.
+- Navbar collapses into hamburger on mobile.
+
+🧭 Features:
+- Animated scroll between sections.
+- Dark/Light theme saves preference.
+- Language toggle saves preference.
+- Simple fade-in animations for content.
+- Template ready for manual content editing later.
+
+📦 Deployment:
+- Must work seamlessly on **GitHub Pages**, **Vercel**, **Replit**, and other free domain sites.
+- Include proper meta tags for SEO and mobile responsiveness.
+
+🔒 Footer:
+“© 2025 Farhan Muh Tasim | Developed by Farhan | All rights reserved.”
+
+✅ Output:
+Generate all necessary website files (`index.html`, `style.css`, `script.js`, `assets/`, `_config.yml`, `vercel.json`, and `README.md`) with clean, professional code and placeholders for images, videos, and social media links.
